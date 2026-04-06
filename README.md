@@ -77,6 +77,10 @@ binge-box/
 │       └── moviesData.js   # Local Movie Database
 └── README.md
 ```
+
+### 🤝 Connect with Me
+* **LinkedIn:** (https://www.linkedin.com/in/ bushraa-waseem)
+
 ## 📸 App Gallery
 
 <details>
@@ -101,5 +105,3 @@ binge-box/
 | <img width="959" height="473" alt="10 register" src="https://github.com/user-attachments/assets/e6c9565c-a666-445a-a6b2-fb11ca7579ea" width="250px"> |
 </details>
 
-### 🤝 Connect with Me
-* **LinkedIn:** (https://www.linkedin.com/in/ bushraa-waseem)
