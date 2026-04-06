@@ -98,6 +98,5 @@ binge-box/
 | :---: | :---: | :---: | 
 | <img width="959" height="473" alt="07 about" src="https://github.com/user-attachments/assets/490af4db-ef10-42a3-8be8-4f352bcd2a3a" width="250px"> | <img width="959" height="473" alt="04 contact" src="https://github.com/user-attachments/assets/5b8d2f53-732f-4730-bf3f-ff15f0cf2c1f" width="250px"> | <img width="959" height="473" alt="09 sign in" src="https://github.com/user-attachments/assets/c4320321-f98d-4a88-a74f-052fb92bb9e7" width="250px"> 
 | Register |
-| :---: |
 | <img width="959" height="473" alt="10 register" src="https://github.com/user-attachments/assets/e6c9565c-a666-445a-a6b2-fb11ca7579ea" width="250px"> |
 </details>
