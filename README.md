@@ -102,4 +102,4 @@ binge-box/
 </details>
 
 ### 🤝 Connect with Me
-* **LinkedIn:** [Bushra Waseem](https://www.linkedin.com/in/ bushraa-waseem)
+* **LinkedIn:** (https://www.linkedin.com/in/ bushraa-waseem)
