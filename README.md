@@ -84,29 +84,29 @@ binge-box/
   <br>
 
   ### 🏠 Main Hub & Hero Section
-  <img src="screenshots/01 home.png" width="850px" alt="Home Page">
+  <img src="screenshots/01%20home.png" width="850px" alt="Home Page">
   
   <p float="left">
-    <img src="screenshots/02 recommended movies.png" width="415px" />
-    <img src="screenshots/03 trending movies.png" width="415px" />
+    <img src="screenshots/02%20recommended%20movies.png" width="415px" />
+    <img src="screenshots/03%20trending%20movies.png" width="415px" />
   </p>
 
   ### 🎬 Content Browsing
   <p float="left">
-    <img src="screenshots/05 movies.png" width="415px" />
-    <img src="screenshots/06 tv shows.png" width="415px" />
+    <img src="screenshots/05%20movies.png" width="415px" />
+    <img src="screenshots/06%20tv%20shows.png" width="415px" />
   </p>
   
   <p float="left">
-    <img src="screenshots/08 my list.png" width="415px" />
-    <img src="screenshots/07 about.png" width="415px" />
+    <img src="screenshots/08%20my%20list.png" width="415px" />
+    <img src="screenshots/07%20about.png" width="415px" />
   </p>
 
   ### 🔐 Authentication & Support
   <p float="left">
-    <img src="screenshots/09 sign in.png" width="275px" />
-    <img src="screenshots/10 register.png" width="275px" />
-    <img src="screenshots/04 contact.png" width="275px" />
+    <img src="screenshots/09%20sign%20in.png" width="275px" />
+    <img src="screenshots/10%20register.png" width="275px" />
+    <img src="screenshots/04%20contact.png" width="275px" />
   </p>
 
 </details>
