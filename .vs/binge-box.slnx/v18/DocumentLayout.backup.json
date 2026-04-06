@@ -1,0 +1,271 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LENOVO-T470\\binge-box\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\components\\Navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\Navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\Login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\MovieDetail.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\MovieDetail.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Movies.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\Movies.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\moviesData.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\moviesData.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Profile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\Profile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Register.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\Register.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\TVShows.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\TVShows.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\App.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\App.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Home.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\Home.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\About.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\About.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\App.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\App.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Contact.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\pages\\Contact.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\LENOVO-T470\\binge-box\\backend\\backend\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\backend\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Register.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Register.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Register.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Register.jsx",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAALkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T15:40:14.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Movies.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Movies.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Movies.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Movies.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Movies.jsx",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAwwKAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T15:39:42.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Profile.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Profile.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Profile.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Profile.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Profile.jsx",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAAHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T15:40:35.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "moviesData.js",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\moviesData.js",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\moviesData.js",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\moviesData.js",
+              "RelativeToolTip": "frontend\\src\\pages\\moviesData.js",
+              "ViewState": "AgIAACYAAAAAAAAAAAAuwDQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-04T08:14:28.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MovieDetail.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\MovieDetail.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\MovieDetail.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\MovieDetail.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\MovieDetail.jsx",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAAGUAAACpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T21:37:08.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Login.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Login.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Login.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Login.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T15:39:58.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Navbar.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\components\\Navbar.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\Navbar.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\components\\Navbar.jsx",
+              "RelativeToolTip": "frontend\\src\\components\\Navbar.jsx",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAwwGUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T13:12:48.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TVShows.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\TVShows.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\TVShows.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\TVShows.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\TVShows.jsx",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAwwIsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T22:12:30.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\App.css",
+              "RelativeDocumentMoniker": "frontend\\src\\App.css",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\App.css",
+              "RelativeToolTip": "frontend\\src\\App.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-04T14:46:22.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Home.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Home.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Home.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Home.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Home.jsx",
+              "ViewState": "AgIAAC8BAAAAAABmvUsCwDsBAACpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T13:03:11.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\index.css",
+              "RelativeDocumentMoniker": "frontend\\src\\index.css",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\index.css",
+              "RelativeToolTip": "frontend\\src\\index.css",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-04T14:46:35.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "About.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\About.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\About.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\About.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\About.jsx",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAuwIYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-02T22:12:53.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "server.js",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\backend\\backend\\server.js",
+              "RelativeDocumentMoniker": "backend\\backend\\server.js",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\backend\\backend\\server.js",
+              "RelativeToolTip": "backend\\backend\\server.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-02T12:30:23.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.js",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\App.js",
+              "RelativeDocumentMoniker": "frontend\\src\\App.js",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\App.js",
+              "RelativeToolTip": "frontend\\src\\App.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwCAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-02T13:09:49.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Contact.jsx",
+              "DocumentMoniker": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Contact.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Contact.jsx",
+              "ToolTip": "C:\\Users\\LENOVO-T470\\binge-box\\frontend\\src\\pages\\Contact.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Contact.jsx",
+              "ViewState": "AgIAANkAAAAAAAAAAAAAAOQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-03T12:48:10.53Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
