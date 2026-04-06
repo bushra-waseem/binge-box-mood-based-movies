@@ -9,6 +9,7 @@
 - 📱 **Fully Responsive:** Optimized for desktops, tablets, and mobile devices.
 
 ## 🚀 Tech Stack
+- **Backend:** Node.js
 - **Frontend:** React.js
 - **Styling:** CSS3 (Custom Properties & Keyframes)
 - **Icons:** FontAwesome
@@ -61,10 +62,18 @@ graph TD
 ```
 
 ```text
-  src/
-├── components/     # Reusable UI elements (Navbar, Cards, etc.)
-├── data/           # moviesData.js (Local Database)
-├── styles/         # Custom CSS with Neon effects
-├── App.js          # Main logic & State management
-└── index.js        # Entry point
+binge-box/
+├── backend/                # Main Backend Folder
+│   └── backend/            # Nested Server Folder
+│       ├── server.js       # Entry point (Node.js)
+│       ├── package.json    # Backend Dependencies
+│       └── package-lock.json
+├── frontend/               # React Application
+│   ├── public/             # Static Assets
+│   └── src/                # Frontend Logic
+│       ├── components/     # Navbar.jsx, etc.
+│       ├── pages/          # Home, Login, Movies, etc.
+│       ├── App.js          # Routing
+│       └── moviesData.js   # Local Movie Database
+└── README.md
 ```
