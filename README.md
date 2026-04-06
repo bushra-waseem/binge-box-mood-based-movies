@@ -60,9 +60,11 @@ graph TD
     User --> UC5
 ```
 
+```text
   src/
 ├── components/     # Reusable UI elements (Navbar, Cards, etc.)
 ├── data/           # moviesData.js (Local Database)
 ├── styles/         # Custom CSS with Neon effects
 ├── App.js          # Main logic & State management
-└── index.js        # Entry point```
+└── index.js        # Entry point
+```
