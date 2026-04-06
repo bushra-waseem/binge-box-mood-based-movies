@@ -100,3 +100,6 @@ binge-box/
 | Register |
 | <img width="959" height="473" alt="10 register" src="https://github.com/user-attachments/assets/e6c9565c-a666-445a-a6b2-fb11ca7579ea" width="250px"> |
 </details>
+
+### 🤝 Connect with Me
+* **LinkedIn:** [Bushra Waseem](https://www.linkedin.com/in/ bushraa-waseem)
