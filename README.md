@@ -41,6 +41,24 @@ graph TD
     MovieGrid --> MovieCard
     MovieCard --> WatchlistButton
 ```
+```mermaid
+graph TD
+    User((User))
+    
+    subgraph "Binge & Box App"
+    UC1[Browse Movies]
+    UC2[Search by Title]
+    UC3[Filter by Mood]
+    UC4[View Movie Details]
+    UC5[Manage Collection]
+    end
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+```
 
   src/
 ├── components/     # Reusable UI elements (Navbar, Cards, etc.)
