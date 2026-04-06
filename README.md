@@ -20,7 +20,8 @@
    git clone [https://github.com/bushra-waseem/binge-box-mood-based-movies.git](https://github.com/bushra-waseem/binge-box-mood-based-movies.git)
    cd binge-box-mood-based-movies
    npm install
-   npm start```
+   npm start
+   ```
 
  ```mermaid
 graph LR
@@ -28,7 +29,8 @@ graph LR
     A -->|Search Title| B
     B -->|Query Data| C[(moviesData.js)]
     C -->|Return Match| D[UI Update]
-    D -->|Render| E[Movie Grid]```
+    D -->|Render| E[Movie Grid]
+```
 
 ```mermaid
 graph TD
@@ -37,7 +39,8 @@ graph TD
     App --> FilterBar
     App --> MovieGrid
     MovieGrid --> MovieCard
-    MovieCard --> WatchlistButton```
+    MovieCard --> WatchlistButton
+```
 
   src/
 ├── components/     # Reusable UI elements (Navbar, Cards, etc.)
