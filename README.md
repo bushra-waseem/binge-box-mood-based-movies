@@ -84,8 +84,10 @@ binge-box/
   <br>
 
   ### 🏠 Main Hub & Hero Section
-  <img src="screenshots/01_home.png" width="850px" alt="Home Page">
-  
+  <img src="screenshots/01<img width="959" height="474" alt="01 home" src="https://github.com/user-attachments/assets/d58d8032-d442-4805-aa30-f7581883a504" />
+_home.png" width="850px" alt="Home Page">
+  ![Uploading 01 home.png…]()
+
   <p float="left">
     <img src="screenshots/02%20recommended%20movies.png" width="415px" />
     <img src="screenshots/03%20trending%20movies.png" width="415px" />
