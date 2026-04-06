@@ -86,17 +86,19 @@ binge-box/
   ### 🏠 Main Hub & Discovery
 | Home Page | Recommended | Trending |
 | :---: | :---: | :---: |
-| "<img width="959" height="473" alt="01 home" src="https://github.com/user-attachments/assets/aae890b5-11b1-453c-ad1e-9ad2b20b2dfb" width="250px"> | "<img width="959" height="473" alt="02 recommended movies" src="https://github.com/user-attachments/assets/e3843427-8a16-492c-8a2f-3a13a44ab3dc" width="250px"> | "<img width="958" height="479" alt="03 trending movies" src="https://github.com/user-attachments/assets/344f1061-2436-411e-8b98-1207451ea09b" width="250px"> |
+| <img width="959" height="473" alt="01 home" src="https://github.com/user-attachments/assets/aae890b5-11b1-453c-ad1e-9ad2b20b2dfb" width="250px"> | <img width="959" height="473" alt="02 recommended movies" src="https://github.com/user-attachments/assets/e3843427-8a16-492c-8a2f-3a13a44ab3dc" width="250px"> | <img width="958" height="479" alt="03 trending movies" src="https://github.com/user-attachments/assets/344f1061-2436-411e-8b98-1207451ea09b" width="250px"> |
 
 ### 🎬 Content Browsing
 | Movies | TV Shows | My List |
 | :---: | :---: | :---: |
-| "<img width="959" height="473" alt="05 movies" src="https://github.com/user-attachments/assets/8808ca42-c056-4cdd-aaab-8b90e6d05c93" width="250px"> | "<img width="959" height="473" alt="06 tv shows" src="https://github.com/user-attachments/assets/e2963881-894d-456e-9d7c-86ead7881f27" width="250px"> | "<img width="959" height="473" alt="08 my list" src="https://github.com/user-attachments/assets/1e83f8a9-db59-47c9-ac87-91bbed79ecec" width="250px"> |
+| <img width="959" height="473" alt="05 movies" src="https://github.com/user-attachments/assets/8808ca42-c056-4cdd-aaab-8b90e6d05c93" width="250px"> | <img width="959" height="473" alt="06 tv shows" src="https://github.com/user-attachments/assets/e2963881-894d-456e-9d7c-86ead7881f27" width="250px"> | <img width="959" height="473" alt="08 my list" src="https://github.com/user-attachments/assets/1e83f8a9-db59-47c9-ac87-91bbed79ecec" width="250px"> |
 
 ### 🔐 Auth & Others
-| About | Contact | Sign In | Register |
-| :---: | :---: | :---: | :---: |
-| "<img width="959" height="473" alt="07 about" src="https://github.com/user-attachments/assets/490af4db-ef10-42a3-8be8-4f352bcd2a3a" width="250px"> | "<img width="959" height="473" alt="04 contact" src="https://github.com/user-attachments/assets/5b8d2f53-732f-4730-bf3f-ff15f0cf2c1f" width="250px"> | "<img width="959" height="473" alt="09 sign in" src="https://github.com/user-attachments/assets/c4320321-f98d-4a88-a74f-052fb92bb9e7" width="250px"> |
-"<img width="959" height="473" alt="10 register" src="https://github.com/user-attachments/assets/e6c9565c-a666-445a-a6b2-fb11ca7579ea" width="250px"> |
+| About | Contact | Sign In | 
+| Register |
+| :---: | :---: | :---: | 
+| :---: |
+| <img width="959" height="473" alt="07 about" src="https://github.com/user-attachments/assets/490af4db-ef10-42a3-8be8-4f352bcd2a3a" width="250px"> | <img width="959" height="473" alt="04 contact" src="https://github.com/user-attachments/assets/5b8d2f53-732f-4730-bf3f-ff15f0cf2c1f" width="250px"> | <img width="959" height="473" alt="09 sign in" src="https://github.com/user-attachments/assets/c4320321-f98d-4a88-a74f-052fb92bb9e7" width="250px"> |
+<img width="959" height="473" alt="10 register" src="https://github.com/user-attachments/assets/e6c9565c-a666-445a-a6b2-fb11ca7579ea" width="250px"> |
 
 </details>
