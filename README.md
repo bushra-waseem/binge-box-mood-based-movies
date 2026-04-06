@@ -86,10 +86,7 @@ binge-box/
   ### 🏠 Main Hub & Discovery
 | Home Page | Recommended | Trending |
 | :---: | :---: | :---: |
-| <img src="<img width="959" height="474" alt="01 home" src="https://github.com/user-attachments/assets/aae890b5-11b1-453c-ad1e-9ad2b20b2dfb" />
-" width="250px"> | <img src="<img width="959" height="473" alt="02 recommended movies" src="https://github.com/user-attachments/assets/e3843427-8a16-492c-8a2f-3a13a44ab3dc" />
-" width="250px"> | <img src="<img width="958" height="473" alt="03 trending movies" src="https://github.com/user-attachments/assets/344f1061-2436-411e-8b98-1207451ea09b" />
-" width="250px"> |
+| "<img width="959" height="474" alt="01 home" src="https://github.com/user-attachments/assets/aae890b5-11b1-453c-ad1e-9ad2b20b2dfb" width="250px"> | "<img width="959" height="473" alt="02 recommended movies" src="https://github.com/user-attachments/assets/e3843427-8a16-492c-8a2f-3a13a44ab3dc" width="250px"> | "<img width="958" height="473" alt="03 trending movies" src="https://github.com/user-attachments/assets/344f1061-2436-411e-8b98-1207451ea09b" width="250px"> |
 
 ### 🎬 Content Browsing
 | Movies | TV Shows | My List |
