@@ -77,3 +77,36 @@ binge-box/
 │       └── moviesData.js   # Local Movie Database
 └── README.md
 ```
+## 📸 App Gallery
+
+<details>
+  <summary><b>Click to View Cinematic Interface (10 Screenshots)</b></summary>
+  <br>
+
+  ### 🏠 Main Hub & Hero Section
+  <img src="screenshots/01 home.png" width="850px" alt="Home Page">
+  
+  <p float="left">
+    <img src="screenshots/02 recommended movies.png" width="415px" />
+    <img src="screenshots/03 trending movies.png" width="415px" />
+  </p>
+
+  ### 🎬 Content Browsing
+  <p float="left">
+    <img src="screenshots/05 movies.png" width="415px" />
+    <img src="screenshots/06 tv shows.png" width="415px" />
+  </p>
+  
+  <p float="left">
+    <img src="screenshots/08 my list.png" width="415px" />
+    <img src="screenshots/07 about.png" width="415px" />
+  </p>
+
+  ### 🔐 Authentication & Support
+  <p float="left">
+    <img src="screenshots/09 sign in.png" width="275px" />
+    <img src="screenshots/10 register.png" width="275px" />
+    <img src="screenshots/04 contact.png" width="275px" />
+  </p>
+
+</details>
