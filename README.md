@@ -19,10 +19,11 @@
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/bushra-waseem/binge-box-mood-based-movies.git](https://github.com/bushra-waseem/binge-box-mood-based-movies.git)
-   cd binge-box-mood-based-movies
-   npm install
-   npm start
    ```
+2.- **Navigate to the Project Folder:** cd binge-box-mood-based-movies
+3.- **Install Dependencies:**   npm install
+4.- **Start the Application:**   npm start
+   
 
  ```mermaid
 graph LR
