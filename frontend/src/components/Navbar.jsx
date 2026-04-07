@@ -38,32 +38,29 @@ export default function Navbar() {
                 .nlink:hover{color:#60A5FA !important;}
                 .nlink:hover::after,.nlink.act::after{width:100%;}
                 .nbtn{position:relative;overflow:hidden;transition:all 0.3s ease !important;}
-                .nbtn::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(96,165,250,0.2);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.45s ease,height 0.45s ease;}
-                .nbtn:hover::before{width:180px;height:180px;}
                 .nbtn:hover{border-color:#60A5FA !important;color:#60A5FA !important;transform:translateY(-1px);}
 
-                /* --- MOBILE FIX --- */
+                /* --- MOBILE PE SAB KUCH DIKHANE KE LIYE FIX --- */
                 @media (max-width: 900px) {
-                    .nav-links-wrapper { display: none !important; } /* Links hide ho jayenge */
-                    .nav-main-container { padding: 0 1rem !important; justify-content: space-between !important; }
-                    .center-group { padding-right: 0 !important; gap: 0 !important; }
-                    .logo-text { font-size: 20px !important; }
-                    .auth-btns-wrapper { position: static !important; }
-                    .nbtn { padding: 5px 10px !important; font-size: 10px !important; }
+                    .nav-main-container { padding: 0 0.5rem !important; height: auto !important; min-height: 80px; flex-direction: column !important; justify-content: center !important; gap: 10px; padding-top: 10px; }
+                    .center-group { padding-right: 0 !important; gap: 1rem !important; flex-wrap: wrap !important; justify-content: center !important; }
+                    .nav-links-wrapper { gap: 1rem !important; }
+                    .nlink { font-size: 10px !important; letter-spacing: 0.05em !important; }
+                    .logo-text { font-size: 18px !important; order: -1; width: 100%; text-align: center; } /* Logo top par */
+                    .auth-btns-wrapper { position: static !important; width: 100%; justify-content: center !important; padding-bottom: 10px; }
+                    .nbtn { padding: 4px 10px !important; font-size: 10px !important; }
                 }
             `}</style>
 
             <nav className="nav-main-container" style={{
                 position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, height: "80px",
                 display: "flex", alignItems: "center", justifyContent: "center", padding: "0 2.5rem",
-                background: "transparent", borderBottom: "none", backdropFilter: "none",
-                transition: "all 0.4s ease",
+                background: "transparent", transition: "all 0.4s ease",
             }}>
 
-                {/* CENTER GROUP */}
                 <div className="center-group" style={{ display: "flex", alignItems: "center", gap: "2.5rem", paddingRight: "100px" }}>
 
-                    {/* Left Links */}
+                    {/* Left Links - AB MOBILE PAR BHI DIKHENGE */}
                     <div className="nav-links-wrapper" style={{ display: "flex", gap: "2rem" }}>
                         {[{ l: "Home", p: "/" }, { l: "Movies", p: "/movies" }, { l: "TV Shows", p: "/tvshows" }].map(({ l, p }) => (
                             <span key={p} onClick={() => navigate(p)} className={`nlink${isActive(p) ? " act" : ""}`} style={linkStyle(p)}>{l}</span>
@@ -78,7 +75,7 @@ export default function Navbar() {
                         BINGE<span style={{ color: "#60A5FA" }}> & </span>BOX
                     </div>
 
-                    {/* Right Links */}
+                    {/* Right Links - AB MOBILE PAR BHI DIKHENGE */}
                     <div className="nav-links-wrapper" style={{ display: "flex", gap: "2rem" }}>
                         {[{ l: "About", p: "/about" }, { l: "My List", p: "/profile" }].map(({ l, p }) => (
                             <span key={p} onClick={() => navigate(p)} className={`nlink${isActive(p) ? " act" : ""}`} style={linkStyle(p)}>{l}</span>
