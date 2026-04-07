@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API = process.env.REACT_APP_API_URL;
+const API = "https://binge-box-mood-based-movies-production.up.railway.app";
 
 const RMOOD_COLORS = {
     Romance: { bg: "rgba(232,121,249,0.12)", color: "#E879F9", border: "rgba(232,121,249,0.3)" },
