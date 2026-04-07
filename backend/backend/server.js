@@ -11,12 +11,11 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
-app.use(express.json());
-
-mongoose
-    .connect(process.env.MONGO_URI || "mongodb://localhost:27017/bingeboxdb")
-    .then(() => console.log("✅ MongoDB Connected — bingeboxdb"))
-    .catch((err) => console.log("❌ MongoDB Error:", err));
+app.use(cors({
+    origin: true, // Ye har origin ko allow kar dega (Testing ke liye best hai)
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 const movieSchema = new mongoose.Schema({
     title: { type: String, required: true },
