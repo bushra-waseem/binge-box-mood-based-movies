@@ -14,7 +14,10 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
-
+// Database Connection
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("✅ MongoDB Connected — bingeboxdb"))
+    .catch(err => console.error("❌ MongoDB Connection Error:", err));
 const movieSchema = new mongoose.Schema({
     title: { type: String, required: true },
     year: Number,
