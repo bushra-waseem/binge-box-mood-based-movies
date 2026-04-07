@@ -6,7 +6,11 @@ const bcrypt = require("bcryptjs");
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "binge-box-mood-based-movies.vercel.app", // Ya phir yahan apna Vercel wala link daal dein
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 
 mongoose
