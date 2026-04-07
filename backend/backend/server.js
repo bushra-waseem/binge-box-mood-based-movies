@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 
 dotenv.config();
 const app = express();
-const cors = require('cors');
+
 
 // Sirf ye ek dafa likhein
 app.use(cors({
