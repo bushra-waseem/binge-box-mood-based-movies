@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+/* --- UNIVERSAL MOBILE RESPONSIVENESS FIX --- */
+
+@media (max-width: 768px) {
+  /* 1. Navbar overlap theek karne ke liye */
+  header, .navbar, [class*="nav"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 15px !important;
+    gap: 10px !important;
+    height: auto !important;
+  }
+
+  /* 2. Logo ka size mobile ke liye adjust karein */
+  .logo, h1, [class*="logo"] {
+    font-size: 1.2rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* 3. Register button ko position sahi karne ke liye */
+  button, .register-btn, [class*="btn"] {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    min-width: auto !important;
+  }
+
+  /* 4. Oppenheimer title aur background image fix */
+  .hero-section, [class*="hero"] {
+    padding-top: 60px !important; /* Navbar ke niche space dene ke liye */
+  }
+
+  .hero-title, h2, .Oppenheimer-text {
+    font-size: 2.2rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* 5. Mobile par text ko screen se bahar jane se rokne ke liye */
+  p, .description {
+    font-size: 0.9rem !important;
+    width: 90% !important;
+    margin: 10px auto !important;
+  }
+}
