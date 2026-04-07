@@ -25,7 +25,7 @@ export default function Login() {
         if (!email.trim() || !password.trim()) { setError("Please fill in both fields."); return; }
         setLoading(true);
         try {
-            const res = await axios.post(${ API } / api / users / login, { email: email.trim(), password });
+            const res = await axios.post(`${API}/api/users/login`, { email: email.trim(), password });
             localStorage.setItem("bbUser", JSON.stringify(res.data.user));
             navigate("/");
         } catch (err) {

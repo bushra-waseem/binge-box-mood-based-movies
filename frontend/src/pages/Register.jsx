@@ -39,7 +39,7 @@ export default function Register() {
         setLoading(true);
         setError("");
         try {
-            const res = await axios.post(${ API } / api / users / register, {
+            const res = await axios.post(`${API}/api/users/register`, {
                 name: name.trim(),
                 email: email.trim(),
                 password,
