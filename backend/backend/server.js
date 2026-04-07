@@ -6,13 +6,11 @@ const bcrypt = require("bcryptjs");
 
 dotenv.config();
 const app = express();
+const cors = require('cors');
+
+// Sirf ye ek dafa likhein
 app.use(cors({
-    origin: ["https://binge-box-mood-based-movies.vercel.app", "http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}));
-app.use(cors({
-    origin: true, // Ye har origin ko allow kar dega (Testing ke liye best hai)
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
