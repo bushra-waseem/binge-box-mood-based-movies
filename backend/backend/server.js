@@ -7,7 +7,7 @@ const bcrypt = require("bcryptjs");
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: "binge-box-mood-based-movies.vercel.app", // Ya phir yahan apna Vercel wala link daal dein
+    origin: ["https://binge-box-mood-based-movies.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
