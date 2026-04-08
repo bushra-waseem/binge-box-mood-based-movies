@@ -92,6 +92,24 @@ export default function Navbar() {
                     z-index: 999;
                     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                 }
+                @media (max-width: 768px) {
+    .navbar-container {
+      background: #0B1A3E !important; /* Transparent khatam karne ke liye */
+      height: 70px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 0 15px !important;
+      position: fixed !important;
+      top: 0 !important;
+      z-index: 9999 !important; /* Taake movies ke piche na jaye */
+    }
+    
+    /* Logo aur Menu Button ki spacing */
+    .logo-text { font-size: 18px !important; }
+    .nav-links { display: none !important; } /* Mobile menu handling */
+  }
             `}</style>
 
             <nav style={{
