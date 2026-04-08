@@ -25,7 +25,7 @@ function FeaturedCard({ movie, index, onNavigate }) {
 
     return (
         <>
-            <div ref={ref} style={{
+            <div ref={ref} className="featured-container" style={{
                 display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0",
                 alignItems: "center", direction: isLeft ? "ltr" : "rtl",
                 maxWidth: "1100px", margin: "0 auto", padding: "0 2.5rem",
@@ -34,6 +34,7 @@ function FeaturedCard({ movie, index, onNavigate }) {
             }}>
                 {/* Image */}
                 <div
+                    className="featured-image-box"
                     onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
                     onClick={() => onNavigate(`/movies/${movie._id}`)}
                     style={{
@@ -52,23 +53,21 @@ function FeaturedCard({ movie, index, onNavigate }) {
                     ) : (
                         <div style={{ width: "100%", height: "100%", background: movie.posterColor }} />
                     )}
-                    {/* FIX 1: overlay only on bottom portion — not full dark blanket */}
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(5,15,40,0.7) 0%, rgba(5,15,40,0.1) 40%, transparent 100%)" }} />
-                    {/* Neon top border */}
                     <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: `linear-gradient(to right,transparent,${neon},transparent)`, opacity: hov ? 1 : 0.5, transition: "opacity 0.4s" }} />
                     <span style={{ position: "absolute", bottom: "12px", left: "14px", background: "rgba(0,0,0,0.55)", color: "#FCD34D", fontSize: "11px", fontWeight: "600", padding: "4px 10px", borderRadius: "4px" }}>★ {movie.rating}</span>
                 </div>
 
                 {/* Text */}
-                <div style={{ direction: "ltr", padding: isLeft ? "0 0 0 3rem" : "0 3rem 0 0" }}>
+                <div className="featured-text-box" style={{ direction: "ltr", padding: isLeft ? "0 0 0 3rem" : "0 3rem 0 0" }}>
                     <div style={{ display: "flex", gap: "8px", marginBottom: "1rem", flexWrap: "wrap" }}>
                         {movie.mood?.map(m => (
                             <span key={m} style={{ background: `${neon}18`, color: neon, border: `1px solid ${neon}40`, fontSize: "11px", fontWeight: "500", padding: "3px 10px", borderRadius: "3px", letterSpacing: "0.06em" }}>{m}</span>
                         ))}
                     </div>
-                    <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "38px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "0.6rem" }}>{movie.title}</h2>
+                    <h2 className="featured-title" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "38px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "0.6rem" }}>{movie.title}</h2>
                     <p style={{ fontSize: "12px", color: "#93C5FD", marginBottom: "1.1rem", letterSpacing: "0.06em" }}>{movie.year} · {movie.genre?.join(" · ")}</p>
-                    <p style={{ fontSize: "15px", color: "#A8C4F0", lineHeight: "1.8", fontWeight: "300", marginBottom: "2rem" }}>{movie.description}</p>
+                    <p className="featured-desc" style={{ fontSize: "15px", color: "#A8C4F0", lineHeight: "1.8", fontWeight: "300", marginBottom: "2rem" }}>{movie.description}</p>
                     <div style={{ display: "flex", gap: "12px" }}>
                         <button onClick={() => onNavigate(`/movies/${movie._id}`)}
                             style={{ background: neon, color: "#0B1A3E", border: "none", padding: "12px 28px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.08em", cursor: "pointer", boxShadow: `0 0 22px ${neon}55`, transition: "all 0.3s ease" }}
@@ -77,11 +76,14 @@ function FeaturedCard({ movie, index, onNavigate }) {
                             ▶ Watch Now
                         </button>
                         <button
+                            className="watchlist-btn"
                             style={{ background: "transparent", color: "#A8C4F0", border: "1px solid rgba(148,163,184,0.25)", padding: "12px 22px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", cursor: "pointer", transition: "all 0.3s ease" }}
                             onMouseEnter={e => { e.currentTarget.style.borderColor = neon; e.currentTarget.style.color = neon; }}
                             onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(148,163,184,0.25)"; e.currentTarget.style.color = "#94A3B8"; }}>
                             + Add to Watchlist
+
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -121,21 +123,13 @@ function TrendingCard({ movie, index, onNavigate }) {
                 <span style={{ position: "absolute", bottom: "8px", right: "10px", background: "rgba(0,0,0,0.55)", color: "#FCD34D", fontSize: "11px", fontWeight: "600", padding: "3px 7px", borderRadius: "4px" }}>★ {movie.rating}</span>
             </div>
             <div style={{ padding: "12px 14px", background: "rgba(17,34,80,0.85)" }}>
-                <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "15px", fontWeight: "700", color: "#F1F5F9", marginBottom: "3px" }}>{movie.title}</p>
+                <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "15px", fontWeight: "700", color: "#F1F5F9", marginBottom: "3px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{movie.title}</p>
                 <p style={{ fontSize: "11px", color: "#7BAEE8", fontWeight: "300" }}>{movie.year} · {movie.genre?.slice(0, 2).join(" · ")}</p>
             </div>
         </div>
     );
 }
 
-// ── CONTACT SECTION ──────────────────────────────────────────
-const FAQS = [
-    { q: "Is Binge & Box free?", a: "Yes! Basic browsing and mood discovery are completely free. Create an account to unlock watchlists and reviews." },
-    { q: "How does mood-based discovery work?", a: "Select your current mood — Romance, Thriller, Sci-Fi and more — and we show movies and shows that perfectly match that vibe." },
-    { q: "Can I add movies to the database?", a: "Admins can add movies via the admin dashboard. Users can request additions by contacting us." },
-];
-
-/* FIX 2: Spinning animated border box component */
 function SpinBorderBox({ children, color = "#60A5FA", style = {}, hoverLift = false }) {
     const [hov, setHov] = useState(false);
     const uid = useRef("sb" + Math.random().toString(36).slice(2, 8)).current;
@@ -180,6 +174,7 @@ function SpinBorderBox({ children, color = "#60A5FA", style = {}, hoverLift = fa
                 }}
             >
                 {children}
+
             </div>
         </>
     );
@@ -192,21 +187,25 @@ function ContactSection() {
     const ref = useRef();
     const visible = useVisible(ref);
 
+    const FAQS = [
+        { q: "Is Binge & Box free?", a: "Yes! Basic browsing and mood discovery are completely free. Create an account to unlock watchlists and reviews." },
+        { q: "How does mood-based discovery work?", a: "Select your current mood — Romance, Thriller, Sci-Fi and more — and we show movies and shows that perfectly match that vibe." },
+        { q: "Can I add movies to the database?", a: "Admins can add movies via the admin dashboard. Users can request additions by contacting us." },
+    ];
+
     const inputStyle = { width: "100%", padding: "12px 15px", borderRadius: "7px", border: "1px solid rgba(96,165,250,0.2)", background: "rgba(22,40,90,0.75)", fontFamily: "'Jost',sans-serif", fontSize: "14px", color: "#F1F5F9", outline: "none", boxSizing: "border-box", fontWeight: "300", transition: "border-color 0.3s" };
 
     return (
         <div ref={ref} style={{ background: "linear-gradient(to bottom,#0B1A3E,#091633)", borderTop: "1px solid rgba(96,165,250,0.1)", padding: "6rem 2.5rem", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(40px)", transition: "opacity 0.8s ease,transform 0.8s ease" }}>
             <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-                {/* Heading */}
                 <div style={{ textAlign: "center", marginBottom: "4rem" }}>
                     <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.2em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>✦ Get In Touch</p>
-                    <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "46px", fontWeight: "700", color: "#F8FAFC", marginBottom: "0" }}>
+                    <h2 className="section-title" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "46px", fontWeight: "700", color: "#F8FAFC", marginBottom: "0" }}>
                         Let's <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Connect</em>
                     </h2>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
-                    {/* FIX 2a: FORM with spinning neon border */}
+                <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
                     <SpinBorderBox color="#60A5FA" style={{ padding: "2.5rem" }}>
                         <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "26px", fontWeight: "700", color: "#F8FAFC", marginBottom: "1.75rem" }}>
                             Send a <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Message</em>
@@ -219,7 +218,7 @@ function ContactSection() {
                             </div>
                         ) : (
                             <>
-                                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "12px" }}>
+                                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "12px" }}>
                                     <div>
                                         <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.1em", textTransform: "uppercase", color: "#7BAEE8", marginBottom: "7px" }}>Name</p>
                                         <input style={inputStyle} placeholder="Your name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
@@ -246,7 +245,6 @@ function ContactSection() {
                         )}
                     </SpinBorderBox>
 
-                    {/* FAQ */}
                     <div>
                         <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "26px", fontWeight: "700", color: "#F8FAFC", marginBottom: "1.75rem" }}>
                             Frequently <em style={{ color: "#818CF8", fontStyle: "italic" }}>Asked</em>
@@ -268,8 +266,7 @@ function ContactSection() {
                             ))}
                         </div>
 
-                        {/* FIX 2b: Email & Response boxes with spinning border + hover lift */}
-                        <div style={{ marginTop: "1.75rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                        <div className="info-boxes" style={{ marginTop: "1.75rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
                             <SpinBorderBox color="#60A5FA" hoverLift={true} style={{ padding: "1.25rem", textAlign: "center" }}>
                                 <div style={{ fontSize: "22px", marginBottom: "6px" }}>✉</div>
                                 <p style={{ fontSize: "10px", fontWeight: "600", letterSpacing: "0.12em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "4px" }}>Email</p>
@@ -303,7 +300,67 @@ export default function Home() {
     return (
         <>
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-            <style>{`@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}.hanim{animation:fadeUp 0.85s ease forwards;}`}</style>
+            <style>{`
+                @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+                .hanim{animation:fadeUp 0.85s ease forwards;}
+                
+                /* MOBILE RESPONSIVE CSS */
+                @media (max-width: 768px) {
+                    .hero-title { fontSize: 40px !important; }
+                    .hero-desc { fontSize: 13px !important; maxWidth: 100% !important; }
+                    .featured-container { 
+                        grid-template-columns: 1fr !important; 
+                        padding: 0 1.5rem !important;
+                        gap: 2rem !important;
+                    }
+                    .featured-text-box { padding: 0 !important; }
+                    .featured-title { fontSize: 28px !important; }
+                    .trending-grid { 
+                        grid-template-columns: repeat(2, 1fr) !important; 
+                        gap: 12px !important; 
+                    }
+                    .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+                    .form-row { grid-template-columns: 1fr !important; }
+                    .stats-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+                    .watchlist-btn { display: none; } /* Mobile par space bachane ke liye */
+                }
+               /* MOBILE RESPONSIVE CSS */
+@media (max-width: 768px) {
+    .hero-title { font-size: 40px !important; }
+    .hero-desc { font-size: 13px !important; max-width: 100% !important; }
+    .featured-container { 
+        grid-template-columns: 1fr !important; 
+        padding: 0 1.5rem !important;
+        gap: 2rem !important;
+    }
+    .featured-text-box { padding: 0 !important; }
+    .featured-title { font-size: 28px !important; }
+    
+    /* FIX: Button Container for Mobile */
+    .featured-button-group {
+        display: flex !important;
+        flex-direction: row !important; /* Force side-by-side */
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    /* FIX: Watchlist Button Visibility */
+    .watchlist-btn { 
+        display: flex !important; /* Wapis le aaye */
+        flex: 1 !important;
+        padding: 10px 5px !important;
+        font-size: 11px !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .watch-now-btn {
+        flex: 1 !important;
+        padding: 10px 5px !important;
+        font-size: 11px !important;
+    }
+}
+            `}</style>
 
             <div style={{ background: "transparent", minHeight: "100vh", color: "#F1F5F9", fontFamily: "'Jost',sans-serif", paddingTop: "0" }}>
 
@@ -316,11 +373,11 @@ export default function Home() {
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right,rgba(11,26,62,0.85) 0%, rgba(11,26,62,0.3) 30%, transparent 60%)" }} />
                     <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "35%", background: "linear-gradient(to top,#0B1A3E,transparent)" }} />
 
-                    <div key={heroIdx} className="hanim" style={{ position: "absolute", bottom: "12%", left: "5%", maxWidth: "540px" }}>
+                    <div key={heroIdx} className="hanim" style={{ position: "absolute", bottom: "12%", left: "5%", right: "5%", maxWidth: "540px" }}>
                         <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.2em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "1rem" }}>✦ Now Featuring</p>
-                        <h1 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "62px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.05", marginBottom: "0.75rem" }}>{hero.title}</h1>
+                        <h1 className="hero-title" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "62px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.05", marginBottom: "0.75rem" }}>{hero.title}</h1>
                         <p style={{ fontSize: "12px", color: "#93C5FD", marginBottom: "1rem", letterSpacing: "0.06em" }}>{hero.year} · {hero.genre?.join(" · ")}</p>
-                        <p style={{ fontSize: "15px", color: "#A8C4F0", lineHeight: "1.75", fontWeight: "300", marginBottom: "2rem", maxWidth: "430px" }}>{hero.description}</p>
+                        <p className="hero-desc" style={{ fontSize: "15px", color: "#A8C4F0", lineHeight: "1.75", fontWeight: "300", marginBottom: "2rem", maxWidth: "430px" }}>{hero.description}</p>
                         <div style={{ display: "flex", gap: "12px" }}>
                             <button onClick={() => navigate(`/movies/${hero._id}`)}
                                 style={{ background: "#2563EB", color: "#fff", border: "none", padding: "14px 30px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.08em", cursor: "pointer", boxShadow: "0 0 28px rgba(37,99,235,0.5)", transition: "all 0.3s" }}
@@ -337,25 +394,19 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* Dots */}
+                    {/* Dots - Hidden on very small mobile for space */}
                     <div style={{ position: "absolute", bottom: "5%", left: "5%", display: "flex", gap: "8px" }}>
                         {HERO_IDS.map((_, i) => (
                             <div key={i} onClick={() => setHeroIdx(i)} style={{ width: i === heroIdx ? "24px" : "8px", height: "8px", borderRadius: "4px", background: i === heroIdx ? "#60A5FA" : "rgba(255,255,255,0.25)", cursor: "pointer", transition: "all 0.35s ease" }} />
                         ))}
                     </div>
-
-                    <div style={{ position: "absolute", bottom: "12%", right: "5%", textAlign: "center" }}>
-                        <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "44px", fontWeight: "700", color: "#FCD34D", lineHeight: 1 }}>★</div>
-                        <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "26px", fontWeight: "700", color: "#F8FAFC" }}>{hero.rating}</div>
-                        <div style={{ fontSize: "10px", color: "#93C5FD", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "2px" }}>IMDb</div>
-                    </div>
                 </div>
 
                 {/* RECOMMENDED */}
-                <div style={{ padding: "6rem 0 4rem" }}>
+                <div style={{ padding: "4rem 0" }}>
                     <div style={{ textAlign: "center", marginBottom: "4rem", padding: "0 2.5rem" }}>
                         <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.2em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>✦ Curated For You</p>
-                        <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "42px", fontWeight: "700", color: "#F8FAFC" }}>
+                        <h2 className="section-title" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "42px", fontWeight: "700", color: "#F8FAFC" }}>
                             Recommended <em style={{ color: "#60A5FA", fontStyle: "italic" }}>For You</em>
                         </h2>
                     </div>
@@ -365,27 +416,25 @@ export default function Home() {
                 </div>
 
                 {/* TRENDING */}
-                <div style={{ padding: "2rem 2.5rem 5rem", maxWidth: "1100px", margin: "0 auto" }}>
+                <div style={{ padding: "2rem 1.5rem 5rem", maxWidth: "1100px", margin: "0 auto" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2.5rem" }}>
                         <div>
                             <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.2em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "8px" }}>✦ This Week</p>
-                            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "38px", fontWeight: "700", color: "#F8FAFC" }}>Trending <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Now</em></h2>
+                            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "32px", fontWeight: "700", color: "#F8FAFC" }}>Trending <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Now</em></h2>
                         </div>
                         <button onClick={() => navigate("/movies")}
-                            style={{ background: "transparent", color: "#60A5FA", border: "1px solid rgba(96,165,250,0.35)", padding: "9px 20px", borderRadius: "4px", fontFamily: "'Jost',sans-serif", fontSize: "12px", fontWeight: "500", letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s" }}
-                            onMouseEnter={e => e.currentTarget.style.background = "rgba(96,165,250,0.1)"}
-                            onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
+                            style={{ background: "transparent", color: "#60A5FA", border: "1px solid rgba(96,165,250,0.35)", padding: "8px 16px", borderRadius: "4px", fontSize: "11px", fontWeight: "500", cursor: "pointer" }}>
                             See All →
                         </button>
                     </div>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(6,minmax(0,1fr))", gap: "16px" }}>
+                    <div className="trending-grid" style={{ display: "grid", gridTemplateColumns: "repeat(6,minmax(0,1fr))", gap: "16px" }}>
                         {TRENDING.map((m, i) => <TrendingCard key={m._id + "_" + i} movie={m} index={i} onNavigate={navigate} />)}
                     </div>
                 </div>
 
                 {/* STATS */}
                 <div style={{ borderTop: "1px solid rgba(96,165,250,0.1)", borderBottom: "1px solid rgba(96,165,250,0.1)", background: "rgba(22,40,90,0.5)", padding: "2.5rem" }}>
-                    <div style={{ maxWidth: "900px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "2rem", textAlign: "center" }}>
+                    <div className="stats-grid" style={{ maxWidth: "900px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "2rem", textAlign: "center" }}>
                         {[{ n: "10K+", l: "Titles" }, { n: "50K+", l: "Users" }, { n: "8", l: "Moods" }].map(s => (
                             <div key={s.l}>
                                 <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "46px", fontWeight: "700", color: "#60A5FA", lineHeight: 1, marginBottom: "6px" }}>{s.n}</div>
@@ -401,9 +450,9 @@ export default function Home() {
                 {/* FOOTER */}
                 <footer style={{ background: "#091633", padding: "2.5rem", textAlign: "center", borderTop: "1px solid rgba(96,165,250,0.06)" }}>
                     <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "22px", fontWeight: "700", color: "#F8FAFC", marginBottom: "0.5rem" }}>
-                        BINGE<span style={{ color: "#60A5FA" }}> & </span>BOX
+                        BINGE<span style={{ color: "#60A5FA" }}>BOX</span>
                     </div>
-                    <p style={{ fontSize: "12px", color: "#60A5FA", marginTop: "0.75rem" }}>© 2025 Binge & Box. All rights reserved.</p>
+                    <p style={{ fontSize: "11px", color: "#64748B", letterSpacing: "0.05em" }}>&copy; 2026 Binge Box Movie Discovery. All rights reserved.</p>
                 </footer>
             </div>
         </>

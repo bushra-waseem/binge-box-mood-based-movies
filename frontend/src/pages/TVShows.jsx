@@ -14,6 +14,7 @@ const MOOD_C = {
     Motivated: { bg: "#A3E6350F", color: "#A3E635", border: "#A3E63540" },
     Horror: { bg: "#A78BFA0F", color: "#A78BFA", border: "#A78BFA40" },
 };
+
 function TVCard({ show, onNavigate }) {
     const [hov, setHov] = useState(false);
     const [imgErr, setImgErr] = useState(false);
@@ -22,6 +23,7 @@ function TVCard({ show, onNavigate }) {
     return (
         <div onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
             onClick={() => onNavigate(`/movies/${show._id}`)}
+            className="tv-card"
             style={{ borderRadius: "12px", overflow: "hidden", background: "rgba(22,40,90,0.75)", border: `1px solid ${hov ? neon : "rgba(96,165,250,0.12)"}`, cursor: "pointer", transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transform: hov ? "translateY(-10px) scale(1.02)" : "translateY(0)", boxShadow: hov ? `0 20px 50px ${neon}44, 0 0 20px ${neon}22` : "none", display: "flex", flexDirection: "column", zIndex: hov ? 10 : 1 }}>
             <div style={{ width: "100%", paddingTop: "145%", position: "relative", overflow: "hidden", flexShrink: 0 }}>
                 <div style={{ position: "absolute", inset: 0 }}>
@@ -43,7 +45,7 @@ function TVCard({ show, onNavigate }) {
                 <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "15px", fontWeight: "700", color: "#F1F5F9", marginBottom: "2px", lineHeight: "1.2" }}>{show.title}</p>
                 <p style={{ fontSize: "10px", color: "#7BA3D0", fontWeight: "300", marginBottom: hov ? "8px" : "0" }}>{show.year} · {show.seasons} Season{show.seasons > 1 ? "s" : ""}</p>
                 {hov && (
-                    <div style={{ display: "flex", gap: "6px" }}>
+                    <div className="card-btns" style={{ display: "flex", gap: "6px" }}>
                         <button onClick={e => { e.stopPropagation(); onNavigate(`/movies/${show._id}`); }}
                             style={{ flex: 1, background: neon, color: "#0B1A3E", border: "none", padding: "7px 0", borderRadius: "4px", fontFamily: "'Jost',sans-serif", fontSize: "10px", fontWeight: "600", cursor: "pointer" }}>▶ Watch</button>
                         <button onClick={e => { e.stopPropagation(); alert(`"${show.title}" added to watchlist!`); }}
@@ -80,9 +82,29 @@ export default function TVShows() {
     return (
         <>
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+            <style>{`
+                /* MOBILE FIXES */
+                @media (max-width: 768px) {
+                    .tv-header { padding: 2rem 1.5rem 1.5rem !important; }
+                    .tv-header h1 { font-size: 32px !important; }
+                    .tv-content { padding: 1.5rem !important; }
+                    .tv-grid { 
+                        grid-template-columns: repeat(2, 1fr) !important; 
+                        gap: 12px !important; 
+                    }
+                    .scroll-container {
+                        overflow-x: auto !important;
+                        padding-bottom: 10px;
+                        -webkit-overflow-scrolling: touch;
+                    }
+                    .scroll-container::-webkit-scrollbar { display: none; }
+                    .status-box { flex-direction: column !important; gap: 1rem !important; }
+                }
+            `}</style>
+
             <div style={{ fontFamily: "'Jost',sans-serif", background: "#0B1A3E", minHeight: "100vh", color: "#F1F5F9", paddingTop: "70px" }}>
 
-                <div style={{ padding: "3rem 2.5rem 2rem", maxWidth: "1100px", margin: "0 auto", borderBottom: "1px solid rgba(96,165,250,0.1)" }}>
+                <div className="tv-header" style={{ padding: "3rem 2.5rem 2rem", maxWidth: "1100px", margin: "0 auto", borderBottom: "1px solid rgba(96,165,250,0.1)" }}>
                     <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.2em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "8px" }}>✦ TV Shows</p>
                     <h1 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "44px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "0.5rem" }}>
                         Binge-Worthy <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Shows</em>
@@ -90,7 +112,7 @@ export default function TVShows() {
                     <p style={{ fontSize: "14px", color: "#7BA3D0", fontWeight: "300" }}>{filtered.length} shows</p>
                 </div>
 
-                <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2rem 2.5rem" }}>
+                <div className="tv-content" style={{ maxWidth: "1100px", margin: "0 auto", padding: "2rem 2.5rem" }}>
                     <div style={{ position: "relative", marginBottom: "1.75rem" }}>
                         <svg style={{ position: "absolute", left: "15px", top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7BA3D0" strokeWidth="2.5" strokeLinecap="round">
                             <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -100,12 +122,9 @@ export default function TVShows() {
                             onFocus={e => e.target.style.borderColor = "rgba(96,165,250,0.45)"} onBlur={e => e.target.style.borderColor = "rgba(96,165,250,0.2)"} />
                     </div>
 
-                    {/* MOOD PILLS */}
                     <div style={{ marginBottom: "1.5rem" }}>
                         <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>Mood</p>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-
-                            {/* All Moods Button */}
+                        <div className="scroll-container" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                             <span onClick={() => setActiveMood("All")}
                                 style={{
                                     ...pill(activeMood === "All"),
@@ -117,19 +136,17 @@ export default function TVShows() {
                                 All
                             </span>
 
-                            {/* Other Moods */}
                             {MOODS.filter(m => m !== "All").map(m => {
                                 const mc = MOOD_C[m] || {};
                                 const isActive = activeMood === m;
-
                                 return (
                                     <span key={m} onClick={() => setActiveMood(m)}
                                         style={{
                                             ...pill(isActive, mc.color),
-                                            color: mc.color, // Hamesha colorful text
-                                            borderColor: isActive ? mc.color : mc.border, // Colorful borders
-                                            background: isActive ? `${mc.color}33` : mc.bg, // Subtle colorful background
-                                            boxShadow: isActive ? `0 0 15px ${mc.color}40` : "none", // Neon glow on click
+                                            color: mc.color,
+                                            borderColor: isActive ? mc.color : mc.border,
+                                            background: isActive ? `${mc.color}33` : mc.bg,
+                                            boxShadow: isActive ? `0 0 15px ${mc.color}40` : "none",
                                             transition: "all 0.3s ease"
                                         }}>
                                         {m}
@@ -139,7 +156,7 @@ export default function TVShows() {
                         </div>
                     </div>
 
-                    <div style={{ display: "flex", gap: "2rem", marginBottom: "2rem", borderTop: "1px solid rgba(96,165,250,0.08)", paddingTop: "1.25rem" }}>
+                    <div className="status-box" style={{ display: "flex", gap: "2rem", marginBottom: "2rem", borderTop: "1px solid rgba(96,165,250,0.08)", paddingTop: "1.25rem" }}>
                         <div>
                             <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", textTransform: "uppercase", color: "#5B89C0", marginBottom: "10px" }}>Status</p>
                             <div style={{ display: "flex", gap: "8px" }}>
@@ -155,7 +172,7 @@ export default function TVShows() {
                                 style={{ background: "#2563EB", color: "#fff", border: "none", padding: "12px 26px", borderRadius: "4px", fontFamily: "'Jost',sans-serif", fontSize: "13px", cursor: "pointer" }}>Reset</button>
                         </div>
                     ) : (
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(5,minmax(0,1fr))", gap: "18px", alignItems: "start" }}>
+                        <div className="tv-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5,minmax(0,1fr))", gap: "18px", alignItems: "start" }}>
                             {filtered.map(s => <TVCard key={s._id} show={s} onNavigate={navigate} />)}
                         </div>
                     )}

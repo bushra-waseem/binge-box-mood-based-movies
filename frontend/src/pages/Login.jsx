@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = "https://binge-box-mood-based-movies-production.up.railway.app";
-
 const MOOD_PILLS = [
     { label: "Romance", c: "#E879F9" },
     { label: "Thriller", c: "#FB923C" },
@@ -46,15 +45,55 @@ export default function Login() {
         <>
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
             <style>{`
-        .login-btn:hover:not(:disabled){background:#1D4ED8 !important;transform:translateY(-2px);box-shadow:0 0 35px rgba(37,99,235,0.7) !important;}
-        .login-inp:focus{border-color:rgba(96,165,250,0.65) !important;}
-        .login-guest:hover{border-color:rgba(96,165,250,0.4) !important;color:#94A3B8 !important;background:rgba(96,165,250,0.08) !important;}
-      `}</style>
+    .login-btn:hover:not(:disabled){background:#1D4ED8 !important;transform:translateY(-2px);box-shadow:0 0 35px rgba(37,99,235,0.7) !important;}
+    .login-inp:focus{border-color:rgba(96,165,250,0.65) !important;}
+    .login-guest:hover{border-color:rgba(96,165,250,0.4) !important;color:#94A3B8 !important;background:rgba(96,165,250,0.08) !important;}
+    
+    /* MOBILE OPTIMIZATION */
+    @media (max-width: 768px) {
+        .login-container {
+            grid-template-columns: 1fr !important;
+            padding-top: 40px !important; /* Top space kam ki */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        .left-panel {
+            display: none !important; 
+        }
+        .right-panel {
+            padding: 1rem !important; /* Side padding kam ki */
+            background: transparent !important;
+            width: 100% !important;
+            max-width: 340px !important; /* Form ko narrow kiya taake 'bara' na lage */
+        }
+        .form-box {
+            width: 100% !important;
+        }
+        h1 {
+            font-size: 32px !important; /* Welcome Back chota kiya */
+            margin-bottom: 5px !important;
+        }
+        .login-inp {
+            padding: 10px 12px !important; /* Input height kam ki */
+            font-size: 14px !important;
+        }
+        /* Buttons aur gaps ko compact kiya */
+        .login-btn { padding: 12px !important; font-size: 14px !important; }
+        .login-guest { padding: 10px !important; font-size: 13px !important; }
+        
+        /* Spacing adjustments */
+        div[style*="margin-bottom: 2.5rem"] { margin-bottom: 1.2rem !important; }
+        div[style*="margin-bottom: 1.4rem"] { margin-bottom: 1rem !important; }
+        div[style*="margin-bottom: 2rem"] { margin-bottom: 1.5rem !important; }
+        div[style*="margin: 1.75rem 0"] { margin: 1rem 0 !important; }
+    }
+`}</style>
 
-            <div style={{ fontFamily: "'Jost',sans-serif", background: "#0B1A3E", minHeight: "100vh", display: "grid", gridTemplateColumns: "1fr 1fr", paddingTop: "70px" }}>
+            <div className="login-container" style={{ fontFamily: "'Jost',sans-serif", background: "#0B1A3E", minHeight: "100vh", display: "grid", gridTemplateColumns: "1fr 1fr", paddingTop: "70px" }}>
 
                 {/* LEFT */}
-                <div style={{ background: "linear-gradient(160deg,#091633 0%,#0A1A4A 50%,#1238A0 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "4rem", position: "relative", overflow: "hidden" }}>
+                <div className="left-panel" style={{ background: "linear-gradient(160deg,#091633 0%,#0A1A4A 50%,#1238A0 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "4rem", position: "relative", overflow: "hidden" }}>
                     <div style={{ position: "absolute", width: "350px", height: "350px", borderRadius: "50%", border: "1px solid rgba(96,165,250,0.1)", top: "-100px", right: "-80px" }} />
                     <div style={{ position: "absolute", width: "250px", height: "250px", borderRadius: "50%", border: "1px solid rgba(96,165,250,0.07)", bottom: "100px", left: "-60px" }} />
                     <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "26px", fontWeight: "700", color: "#F8FAFC", zIndex: 1 }}>
@@ -77,8 +116,8 @@ export default function Login() {
                 </div>
 
                 {/* RIGHT */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "3rem", background: "rgba(13,32,96,0.6)" }}>
-                    <div style={{ width: "100%", maxWidth: "420px" }}>
+                <div className="right-panel" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "3rem", background: "rgba(13,32,96,0.6)" }}>
+                    <div className="form-box" style={{ width: "100%", maxWidth: "420px" }}>
                         <p style={{ fontSize: "12px", fontWeight: "600", letterSpacing: "0.16em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>Sign In</p>
                         <h1 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "46px", fontWeight: "700", color: "#F8FAFC", marginBottom: "0.6rem", lineHeight: "1.1" }}>
                             Welcome <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Back</em>
@@ -123,7 +162,6 @@ export default function Login() {
                             />
                         </div>
 
-                        {/* ── FIX: onClick calls handleSubmit directly, no form needed ── */}
                         <button
                             className="login-btn"
                             onClick={handleSubmit}

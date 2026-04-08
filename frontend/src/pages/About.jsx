@@ -70,54 +70,63 @@ export default function About() {
         <>
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
             <style>{`
-        @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-        @keyframes rotateSlow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-        .about-page { font-family:'Jost',sans-serif; background:#0B1A3E; min-height:100vh; color:#E8F0FE; }
-      `}</style>
+                @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+                @keyframes rotateSlow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+                .about-page { font-family:'Jost',sans-serif; background:#0B1A3E; min-height:100vh; color:#E8F0FE; overflow-x: hidden; }
+
+                @media (max-width: 768px) {
+                    .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; text-align: center !important; padding: 2rem 1.5rem !important; }
+                    .hero-title { font-size: 42px !important; }
+                    .hero-desc { margin: 0 auto 2rem !important; }
+                    .hero-btns { justify-content: center !important; }
+                    .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+                    .moods-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+                    .values-grid { grid-template-columns: 1fr !important; }
+                    .team-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+                    .cta-banner { padding: 2.5rem 1.5rem !important; margin: 0 1.5rem 3rem !important; }
+                    .cta-title { font-size: 32px !important; }
+                }
+            `}</style>
 
             <div className="about-page" style={{ paddingTop: "70px" }}>
 
                 {/* ── HERO ── */}
                 <div style={{ position: "relative", minHeight: "90vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-                    {/* Animated background orbs */}
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,#0B1A3E 0%,#112250 45%,#1A3470 100%)" }} />
                     <div style={{ position: "absolute", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle,rgba(37,99,235,0.18) 0%,transparent 70%)", top: "-200px", right: "-100px", animation: "floatSlow 8s ease-in-out infinite" }} />
-                    <div style={{ position: "absolute", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 70%)", bottom: "-100px", left: "-80px", animation: "floatSlow 10s ease-in-out infinite reverse" }} />
                     <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "linear-gradient(to right,transparent,#3B82F6,#818CF8,transparent)" }} />
 
-                    <div style={{ position: "relative", zIndex: 1, maxWidth: "1100px", margin: "0 auto", padding: "4rem 2.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-                        {/* Left */}
+                    <div className="hero-grid" style={{ position: "relative", zIndex: 1, maxWidth: "1100px", margin: "0 auto", padding: "4rem 2.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
                         <div>
                             <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(59,130,246,0.15)", border: "1px solid rgba(96,165,250,0.3)", padding: "6px 16px", borderRadius: "20px", marginBottom: "2rem" }}>
                                 <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#60A5FA", display: "inline-block" }} />
                                 <span style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.16em", textTransform: "uppercase", color: "#93C5FD" }}>Our Story</span>
                             </div>
-                            <h1 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "58px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.08", marginBottom: "1.5rem" }}>
+                            <h1 className="hero-title" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "58px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.08", marginBottom: "1.5rem" }}>
                                 Built for the<br />
                                 <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Indecisive</em><br />
                                 Movie Lover
                             </h1>
-                            <p style={{ fontSize: "16px", color: "#93C5FD", lineHeight: "1.85", fontWeight: "300", marginBottom: "2.5rem", maxWidth: "440px" }}>
+                            <p className="hero-desc" style={{ fontSize: "16px", color: "#93C5FD", lineHeight: "1.85", fontWeight: "300", marginBottom: "2.5rem", maxWidth: "440px" }}>
                                 We built Binge & Box because we were tired of spending 45 minutes choosing what to watch. The solution was simple — start with how you feel, not what's trending.
                             </p>
-                            <div style={{ display: "flex", gap: "12px" }}>
+                            <div className="hero-btns" style={{ display: "flex", gap: "12px" }}>
                                 <button onClick={() => navigate("/movies")}
-                                    style={{ background: "#2563EB", color: "#fff", border: "none", padding: "13px 28px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.08em", cursor: "pointer", boxShadow: "0 0 25px rgba(37,99,235,0.45)", transition: "all 0.3s" }}
-                                    onMouseEnter={e => { e.currentTarget.style.background = "#1D4ED8"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                                    onMouseLeave={e => { e.currentTarget.style.background = "#2563EB"; e.currentTarget.style.transform = "translateY(0)"; }}>
+                                    onMouseEnter={e => { e.currentTarget.style.background = "#1D4ED8"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 0 30px rgba(37,99,235,0.6)"; }}
+                                    onMouseLeave={e => { e.currentTarget.style.background = "#2563EB"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 0 25px rgba(37,99,235,0.45)"; }}
+                                    style={{ background: "#2563EB", color: "#fff", border: "none", padding: "13px 28px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", fontWeight: "600", letterSpacing: "0.08em", cursor: "pointer", boxShadow: "0 0 25px rgba(37,99,235,0.45)", transition: "all 0.3s" }}>
                                     Explore Movies →
                                 </button>
                                 <button onClick={() => navigate("/register")}
-                                    style={{ background: "transparent", color: "#93C5FD", border: "1px solid rgba(96,165,250,0.3)", padding: "13px 28px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", cursor: "pointer", transition: "all 0.3s" }}
-                                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(96,165,250,0.1)"; e.currentTarget.style.borderColor = "rgba(96,165,250,0.6)"; }}
-                                    onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(96,165,250,0.3)"; }}>
+                                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(96,165,250,0.1)"; e.currentTarget.style.borderColor = "rgba(96,165,250,0.6)"; e.currentTarget.style.color = "#fff"; }}
+                                    onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(96,165,250,0.3)"; e.currentTarget.style.color = "#93C5FD"; }}
+                                    style={{ background: "transparent", color: "#93C5FD", border: "1px solid rgba(96,165,250,0.3)", padding: "13px 28px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "13px", cursor: "pointer", transition: "all 0.3s" }}>
                                     Join Free
                                 </button>
                             </div>
                         </div>
 
-                        {/* Right — floating stat cards */}
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                        <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                             {STATS.map((s, i) => (
                                 <div key={s.l} style={{ background: "rgba(22,40,100,0.6)", border: "1px solid rgba(96,165,250,0.18)", borderRadius: "16px", padding: "1.75rem", backdropFilter: "blur(8px)", animation: `floatSlow ${6 + i * 1.2}s ease-in-out infinite`, animationDelay: `${i * 0.5}s` }}>
                                     <div style={{ fontSize: "28px", marginBottom: "0.75rem" }}>{s.icon}</div>
@@ -144,7 +153,7 @@ export default function About() {
                     </FadeIn>
 
                     <FadeIn delay={0.1}>
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "14px" }}>
+                        <div className="moods-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "14px" }}>
                             {MOODS.map((m, i) => (
                                 <div key={m.label}
                                     onMouseEnter={() => setHovMood(i)} onMouseLeave={() => setHovMood(null)}
@@ -177,7 +186,7 @@ export default function About() {
                                 </h2>
                             </div>
                         </FadeIn>
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
+                        <div className="values-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
                             {VALUES.map((v, i) => (
                                 <FadeIn key={v.title} delay={i * 0.08}>
                                     <div
@@ -211,7 +220,7 @@ export default function About() {
                             </h2>
                         </div>
                     </FadeIn>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px" }}>
+                    <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px" }}>
                         {TEAM.map((t, i) => (
                             <FadeIn key={t.name} delay={i * 0.1}>
                                 <div
@@ -223,7 +232,7 @@ export default function About() {
                                         transform: hovTeam === i ? "translateY(-8px)" : "translateY(0)",
                                         boxShadow: hovTeam === i ? "0 16px 40px rgba(37,99,235,0.2)" : "none",
                                     }}>
-                                    <div style={{ width: "80px", height: "80px", borderRadius: "50%", background: t.grad, margin: "0 auto 1.25rem", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Cormorant Garamond',serif", fontSize: "30px", fontWeight: "700", color: "#FFFAEF", boxShadow: hovTeam === i ? "0 0 30px rgba(96,165,250,0.3)" : "none", transition: "box-shadow 0.35s", border: "2px solid rgba(255,255,255,0.15)" }}>
+                                    <div style={{ width: "80px", height: "80px", borderRadius: "50%", background: t.grad, margin: "0 auto 1.25rem", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Cormorant Garamond',serif", fontSize: "30px", fontWeight: "700", color: "#FFFAEF", border: "2px solid rgba(255,255,255,0.15)" }}>
                                         {t.initial}
                                     </div>
                                     <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "20px", fontWeight: "700", color: "#F1F5F9", marginBottom: "6px" }}>{t.name}</h3>
@@ -236,27 +245,25 @@ export default function About() {
 
                 {/* ── CTA BANNER ── */}
                 <FadeIn>
-                    <div style={{ margin: "0 2.5rem 5rem", borderRadius: "24px", background: "linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#3B82F6 100%)", padding: "4rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
-                        <div style={{ position: "absolute", width: "300px", height: "300px", borderRadius: "50%", background: "rgba(255,255,255,0.05)", top: "-100px", right: "-50px" }} />
-                        <div style={{ position: "absolute", width: "200px", height: "200px", borderRadius: "50%", background: "rgba(255,255,255,0.05)", bottom: "-80px", left: "-40px" }} />
+                    <div className="cta-banner" style={{ margin: "0 2.5rem 5rem", borderRadius: "24px", background: "linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#3B82F6 100%)", padding: "4rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
                         <div style={{ position: "relative", zIndex: 1 }}>
-                            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "46px", fontWeight: "700", color: "#fff", marginBottom: "1rem" }}>
+                            <h2 className="cta-title" style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "46px", fontWeight: "700", color: "#fff", marginBottom: "1rem" }}>
                                 Ready for Your <em style={{ color: "#FCD34D", fontStyle: "italic" }}>Movie Night?</em>
                             </h2>
                             <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.75)", fontWeight: "300", marginBottom: "2.5rem" }}>
                                 Join 50,000+ movie lovers already discovering films through their mood.
                             </p>
-                            <div style={{ display: "flex", gap: "14px", justifyContent: "center" }}>
+                            <div className="hero-btns" style={{ display: "flex", gap: "14px", justifyContent: "center" }}>
                                 <button onClick={() => navigate("/register")}
-                                    style={{ background: "#fff", color: "#1E3A8A", border: "none", padding: "14px 32px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "14px", fontWeight: "700", letterSpacing: "0.08em", cursor: "pointer", boxShadow: "0 4px 20px rgba(0,0,0,0.2)", transition: "all 0.3s" }}
-                                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.3)"; }}
-                                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.2)"; }}>
+                                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)"; e.currentTarget.style.background = "#F8FAFC"; }}
+                                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.2)"; e.currentTarget.style.background = "#fff"; }}
+                                    style={{ background: "#fff", color: "#1E3A8A", border: "none", padding: "14px 32px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "14px", fontWeight: "700", letterSpacing: "0.08em", cursor: "pointer", boxShadow: "0 4px 20px rgba(0,0,0,0.2)", transition: "all 0.3s" }}>
                                     Create Free Account
                                 </button>
                                 <button onClick={() => navigate("/movies")}
-                                    style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.4)", padding: "14px 32px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "14px", cursor: "pointer", transition: "all 0.3s" }}
-                                    onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.25)"}
-                                    onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.15)"}>
+                                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.25)"; e.currentTarget.style.transform = "translateY(-3px)"; }}
+                                    onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                                    style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.4)", padding: "14px 32px", borderRadius: "6px", fontFamily: "'Jost',sans-serif", fontSize: "14px", cursor: "pointer", transition: "all 0.3s" }}>
                                     Browse as Guest
                                 </button>
                             </div>

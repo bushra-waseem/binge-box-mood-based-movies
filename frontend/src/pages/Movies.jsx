@@ -5,7 +5,6 @@ import { MOVIES_LIST } from "./moviesData";
 const MOODS = ["All", "Happy", "Romance", "Chill", "Emotional", "Thriller", "Sci-Fi", "Motivated", "Horror"];
 
 const MOOD_C = {
-    // Isko "All" kar dein taake aapke MOODS array se match kare
     All: { bg: "#38BDF80F", color: "#38BDF8", border: "#38BDF840" },
     Happy: { bg: "#FCD34D0F", color: "#FCD34D", border: "#FCD34D40" },
     Romance: { bg: "#E879F90F", color: "#E879F9", border: "#E879F940" },
@@ -16,6 +15,7 @@ const MOOD_C = {
     Motivated: { bg: "#A3E6350F", color: "#A3E635", border: "#A3E63540" },
     Horror: { bg: "#A78BFA0F", color: "#A78BFA", border: "#A78BFA40" },
 };
+
 function MovieCard({ movie, onNavigate }) {
     const [hov, setHov] = useState(false);
     const [imgErr, setImgErr] = useState(false);
@@ -27,7 +27,6 @@ function MovieCard({ movie, onNavigate }) {
             onClick={() => onNavigate(`/movies/${movie._id}`)}
             style={{ borderRadius: "12px", overflow: "hidden", background: "rgba(22,40,90,0.75)", border: `1px solid ${hov ? neon : "rgba(96,165,250,0.12)"}`, cursor: "pointer", transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transform: hov ? "translateY(-10px) scale(1.02)" : "translateY(0)", boxShadow: hov ? `0 20px 50px ${neon}44, 0 0 20px ${neon}22` : "none", display: "flex", flexDirection: "column", zIndex: hov ? 10 : 1 }}
         >
-            {/* Poster — fixed 3:4 ratio using padding trick to avoid flicker */}
             <div style={{ width: "100%", paddingTop: "145%", position: "relative", overflow: "hidden", flexShrink: 0 }}>
                 <div style={{ position: "absolute", inset: 0 }}>
                     {movie.posterUrl && !imgErr ? (
@@ -50,7 +49,6 @@ function MovieCard({ movie, onNavigate }) {
                 </div>
             </div>
 
-            {/* Body */}
             <div style={{ padding: "13px", background: "rgba(17,34,80,0.9)", flex: 1 }}>
                 <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "15px", fontWeight: "700", color: "#F1F5F9", marginBottom: "3px", lineHeight: "1.2" }}>{movie.title}</p>
                 <p style={{ fontSize: "10px", color: "#7BAEE8", fontWeight: "300", marginBottom: hov ? "9px" : "0", letterSpacing: "0.04em" }}>{movie.year} · {movie.genre?.slice(0, 2).join(" · ")}</p>
@@ -96,9 +94,32 @@ export default function Movies() {
     return (
         <>
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+            <style>{`
+                @media (max-width: 768px) {
+                    .movies-header { padding: 2rem 1.5rem 1.5rem !important; }
+                    .movies-header h1 { font-size: 32px !important; }
+                    .movies-content { padding: 1.5rem !important; }
+                    .movies-grid { 
+                        grid-template-columns: repeat(2, 1fr) !important; 
+                        gap: 12px !important; 
+                    }
+                    .mood-scroll {
+                        overflow-x: auto !important;
+                        padding-bottom: 8px;
+                        display: flex !important;
+                        flex-wrap: nowrap !important;
+                        -webkit-overflow-scrolling: touch;
+                    }
+                    .mood-scroll::-webkit-scrollbar { display: none; }
+                    .filter-row { flex-direction: column !important; gap: 1.5rem !important; }
+                    .sort-box { margin-left: 0 !important; width: 100%; }
+                    .sort-box select { width: 100%; }
+                }
+            `}</style>
+
             <div style={{ fontFamily: "'Jost',sans-serif", background: "#0B1A3E", minHeight: "100vh", color: "#F1F5F9", paddingTop: "70px" }}>
 
-                <div style={{ padding: "3rem 2.5rem 2rem", maxWidth: "1100px", margin: "0 auto", borderBottom: "1px solid rgba(96,165,250,0.1)" }}>
+                <div className="movies-header" style={{ padding: "3rem 2.5rem 2rem", maxWidth: "1100px", margin: "0 auto", borderBottom: "1px solid rgba(96,165,250,0.1)" }}>
                     <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.2em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "8px" }}>✦ Browse</p>
                     <h1 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "44px", fontWeight: "700", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "0.5rem" }}>
                         Find Your <em style={{ color: "#60A5FA", fontStyle: "italic" }}>Perfect Watch</em>
@@ -106,9 +127,8 @@ export default function Movies() {
                     <p style={{ fontSize: "14px", color: "#7BAEE8", fontWeight: "300" }}>{filtered.length} titles</p>
                 </div>
 
-                <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2rem 2.5rem" }}>
+                <div className="movies-content" style={{ maxWidth: "1100px", margin: "0 auto", padding: "2rem 2.5rem" }}>
 
-                    {/* SEARCH */}
                     <div style={{ position: "relative", marginBottom: "2rem" }}>
                         <svg style={{ position: "absolute", left: "15px", top: "50%", transform: "translateY(-50%)" }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7BA3D0" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
                         <input type="text" placeholder="Search movies..." value={search} onChange={e => setSearch(e.target.value)}
@@ -117,12 +137,9 @@ export default function Movies() {
                         {search && <span onClick={() => setSearch("")} style={{ position: "absolute", right: "14px", top: "50%", transform: "translateY(-50%)", cursor: "pointer", color: "#93C5FD", fontSize: "20px" }}>×</span>}
                     </div>
 
-                    {/* MOOD PILLS */}
                     <div style={{ marginBottom: "1.5rem" }}>
                         <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>Mood</p>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-
-                            {/* All Moods Button */}
+                        <div className="mood-scroll" style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                             <span onClick={() => setActiveMood("All")}
                                 style={{
                                     ...pill(activeMood === "All"),
@@ -134,22 +151,16 @@ export default function Movies() {
                                 All Moods
                             </span>
 
-                            {/* Other Moods */}
                             {MOODS.filter(m => m !== "All").map(m => {
                                 const mc = MOOD_C[m] || {};
                                 const isActive = activeMood === m;
-
                                 return (
                                     <span key={m} onClick={() => setActiveMood(m)}
                                         style={{
                                             ...pill(isActive, mc.color),
-                                            // Hamesha colorful rakhne ke liye mc.color use kiya hai
                                             color: mc.color,
-                                            // Border hamesha colorful rahegi
                                             borderColor: isActive ? mc.color : mc.border,
-                                            // Background hamesha halka colorful rahega
                                             background: isActive ? `${mc.color}33` : mc.bg,
-                                            // Click karne par Neon Glow effect
                                             boxShadow: isActive ? `0 0 15px ${mc.color}40` : "none",
                                             transition: "all 0.3s ease"
                                         }}>
@@ -160,15 +171,14 @@ export default function Movies() {
                         </div>
                     </div>
 
-                    {/* RATING + SORT */}
-                    <div style={{ display: "flex", gap: "2rem", marginBottom: "2rem", borderTop: "1px solid rgba(96,165,250,0.08)", paddingTop: "1.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
+                    <div className="filter-row" style={{ display: "flex", gap: "2rem", marginBottom: "2rem", borderTop: "1px solid rgba(96,165,250,0.08)", paddingTop: "1.5rem", alignItems: "flex-start" }}>
                         <div>
                             <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>Rating</p>
                             <div style={{ display: "flex", gap: "8px" }}>
                                 {["All", "9+", "8+", "7+"].map(r => <span key={r} onClick={() => setActiveRating(r)} style={pill(activeRating === r)}>{r}</span>)}
                             </div>
                         </div>
-                        <div style={{ marginLeft: "auto" }}>
+                        <div className="sort-box" style={{ marginLeft: "auto" }}>
                             <p style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.12em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "10px" }}>Sort By</p>
                             <select value={sortBy} onChange={e => setSortBy(e.target.value)}
                                 style={{ padding: "8px 14px", borderRadius: "6px", border: "1px solid rgba(96,165,250,0.18)", background: "rgba(22,40,90,0.85)", fontFamily: "'Jost',sans-serif", fontSize: "13px", color: "#A8C4F0", cursor: "pointer", outline: "none" }}>
@@ -179,7 +189,6 @@ export default function Movies() {
                         </div>
                     </div>
 
-                    {/* GRID */}
                     {filtered.length === 0 ? (
                         <div style={{ textAlign: "center", padding: "5rem 0" }}>
                             <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "26px", color: "#60A5FA", marginBottom: "1rem" }}>No movies found</p>
@@ -187,7 +196,7 @@ export default function Movies() {
                                 style={{ background: "#2563EB", color: "#fff", border: "none", padding: "12px 26px", borderRadius: "4px", fontFamily: "'Jost',sans-serif", fontSize: "13px", cursor: "pointer" }}>Reset</button>
                         </div>
                     ) : (
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(5,minmax(0,1fr))", gap: "18px", alignItems: "start" }}>
+                        <div className="movies-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5,minmax(0,1fr))", gap: "18px", alignItems: "start" }}>
                             {filtered.map(m => <MovieCard key={m._id} movie={m} onNavigate={navigate} />)}
                         </div>
                     )}

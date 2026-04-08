@@ -34,7 +34,6 @@ export default function Register() {
         setStep(2);
     };
 
-    /* ── FIX: axios is already imported at top, call directly ── */
     const submit = async () => {
         setLoading(true);
         setError("");
@@ -66,14 +65,80 @@ export default function Register() {
         <>
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
             <style>{`
-        .reg-btn:hover:not(:disabled){background:#1D4ED8 !important;transform:translateY(-2px);box-shadow:0 0 35px rgba(37,99,235,0.7) !important;}
-        .reg-inp:focus{border-color:rgba(96,165,250,0.65) !important;}
-      `}</style>
+    .reg-btn:hover:not(:disabled){background:#1D4ED8 !important;transform:translateY(-2px);box-shadow:0 0 35px rgba(37,99,235,0.7) !important;}
+    .reg-inp:focus{border-color:rgba(96,165,250,0.65) !important;}
 
-            <div style={{ fontFamily: "'Jost',sans-serif", background: "#0B1A3E", minHeight: "100vh", display: "grid", gridTemplateColumns: "1fr 1fr", paddingTop: "70px" }}>
+    /* FINAL CLEAN MOBILE FIX */
+    @media (max-width: 768px) {
+        /* Puraani grid ko khatam karke simple layout */
+        .reg-main-grid {
+            display: block !important; 
+            padding-top: 40px !important;
+            background: #0B1A3E !important;
+            min-height: 100vh;
+        }
+        
+        /* Left panel (blue intro) ko sakhti se hide kiya taake overlap na ho */
+        .reg-left-panel {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+            position: absolute !important;
+        }
+
+        .reg-right-panel {
+            padding: 1.5rem !important;
+            background: transparent !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        .reg-form-container {
+            width: 100% !important;
+            max-width: 320px !important;
+            margin: 0 auto !important;
+        }
+
+        /* Logo aur Header ko saaf kiya */
+        .logo-box, div[style*="font-family: 'Cormorant Garamond'"] {
+            text-align: center !important;
+            margin-bottom: 15px !important;
+        }
+
+        h1 {
+            font-size: 28px !important;
+            text-align: center !important;
+            margin: 10px 0 !important;
+        }
+
+        /* Step text fix */
+        div[style*="letter-spacing: 0.16em"] {
+            text-align: center !important;
+            width: 100% !important;
+            margin-bottom: 5px !important;
+            font-size: 11px !important;
+        }
+
+        /* Inputs and spacing */
+        .reg-inp {
+            padding: 12px !important;
+            font-size: 14px !important;
+        }
+
+        div[style*="margin-bottom: 1.4rem"], 
+        div[style*="margin-bottom: 2rem"] {
+            margin-bottom: 0.8rem !important;
+        }
+    }
+`}</style>
+
+            <div className="reg-main-grid" style={{ fontFamily: "'Jost',sans-serif", background: "#0B1A3E", minHeight: "100vh", display: "grid", gridTemplateColumns: "1fr 1fr", paddingTop: "70px" }}>
 
                 {/* LEFT */}
-                <div style={{ background: "linear-gradient(160deg,#091633,#0A1A4A,#1238A0)", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "4rem", position: "relative", overflow: "hidden" }}>
+                <div className="reg-left-panel" style={{ background: "linear-gradient(160deg,#091633,#0A1A4A,#1238A0)", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "4rem", position: "relative", overflow: "hidden" }}>
                     <div style={{ position: "absolute", width: "350px", height: "350px", borderRadius: "50%", border: "1px solid rgba(96,165,250,0.09)", top: "-100px", right: "-80px" }} />
                     <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "26px", fontWeight: "700", color: "#F8FAFC", zIndex: 1 }}>
                         BINGE<span style={{ color: "#60A5FA" }}> & </span>BOX
@@ -101,8 +166,8 @@ export default function Register() {
                 </div>
 
                 {/* RIGHT */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "3rem", background: "rgba(13,32,96,0.6)" }}>
-                    <div style={{ width: "100%", maxWidth: "440px" }}>
+                <div className="reg-right-panel" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "3rem", background: "rgba(13,32,96,0.6)" }}>
+                    <div className="reg-form-container" style={{ width: "100%", maxWidth: "440px" }}>
 
                         {step === 1 && (
                             <>
@@ -144,7 +209,7 @@ export default function Register() {
                                 </h1>
                                 <p style={{ fontSize: "15px", color: "#A8C4F0", fontWeight: "300", marginBottom: "2rem" }}>Select moods you love — we'll personalise your picks.</p>
 
-                                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "1.75rem" }}>
+                                <div className="mood-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "1.75rem" }}>
                                     {Object.entries(RMOOD_COLORS).map(([mood, mc]) => {
                                         const sel = selectedMoods.includes(mood);
                                         return (
@@ -171,7 +236,6 @@ export default function Register() {
                                         style={{ flex: 1, padding: "14px", background: "transparent", color: "#A8C4F0", border: "1.5px solid rgba(96,165,250,0.2)", borderRadius: "8px", fontFamily: "'Jost',sans-serif", fontSize: "14px", cursor: "pointer", transition: "all 0.3s" }}>
                                         ← Back
                                     </button>
-                                    {/* ── FIX: onClick calls submit directly ── */}
                                     <button className="reg-btn" onClick={submit} disabled={loading}
                                         style={{ flex: 2, padding: "14px", background: "#2563EB", color: "#fff", border: "none", borderRadius: "8px", fontFamily: "'Jost',sans-serif", fontSize: "14px", fontWeight: "600", letterSpacing: "0.08em", textTransform: "uppercase", cursor: loading ? "not-allowed" : "pointer", boxShadow: "0 0 22px rgba(37,99,235,0.4)", transition: "all 0.3s", opacity: loading ? 0.7 : 1 }}>
                                         {loading ? "Creating…" : "Create Account →"}
