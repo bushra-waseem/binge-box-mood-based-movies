@@ -68,7 +68,6 @@ export default function Register() {
     .reg-btn:hover:not(:disabled){background:#1D4ED8 !important;transform:translateY(-2px);box-shadow:0 0 35px rgba(37,99,235,0.7) !important;}
     .reg-inp:focus{border-color:rgba(96,165,250,0.65) !important;}
 
-    /* FINAL CLEAN MOBILE FIX */
     @media (max-width: 768px) {
         .reg-main-grid {
             display: flex !important; 
@@ -83,11 +82,12 @@ export default function Register() {
         }
 
         .reg-right-panel {
-            padding: 2rem 1.5rem !important;
+            padding: 1.5rem !important; /* Padding thori kam ki */
             background: transparent !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: center !important; /* Vertically Centers Form */
+            justify-content: flex-start !important; /* Center se hata kar start pe kiya */
+            padding-top: 10% !important; /* Halki si top space */
             flex: 1; 
         }
 
@@ -95,22 +95,21 @@ export default function Register() {
             width: 100% !important;
             max-width: 360px !important;
             margin: 0 auto !important;
+            margin-top: -30px !important; /* Isse form halka sa upar move hoga */
         }
 
         h1 {
-            font-size: 34px !important;
-            margin: 10px 0 !important;
+            font-size: 32px !important;
+            margin: 5px 0 !important;
         }
 
         .reg-inp {
-            padding: 12px !important;
-            font-size: 15px !important;
+            padding: 11px !important; /* Thora aur compact */
+            font-size: 14px !important;
         }
         
-        /* Mood grid optimization for mobile */
         .mood-grid {
-            grid-template-columns: 1fr 1fr !important;
-            gap: 8px !important;
+            gap: 6px !important;
         }
     }
 `}</style>
