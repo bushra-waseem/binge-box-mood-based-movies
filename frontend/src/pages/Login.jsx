@@ -53,40 +53,38 @@ export default function Login() {
     @media (max-width: 768px) {
         .login-container {
             grid-template-columns: 1fr !important;
-            padding-top: 40px !important; /* Top space kam ki */
+            padding-top: 0 !important; /* Header gap handling */
             display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
+            justify-content: center !important; /* Vertically Centers everything */
         }
         .left-panel {
             display: none !important; 
         }
         .right-panel {
-            padding: 1rem !important; /* Side padding kam ki */
+            padding: 2rem 1.5rem !important;
             background: transparent !important;
             width: 100% !important;
-            max-width: 340px !important; /* Form ko narrow kiya taake 'bara' na lage */
+            max-width: 380px !important;
+            min-height: 100vh; /* Puri screen lega center karne ke liye */
+            justify-content: center !important; 
         }
         .form-box {
             width: 100% !important;
+            margin-top: -20px; /* Thora sa balance adjust karne ke liye */
         }
         h1 {
-            font-size: 32px !important; /* Welcome Back chota kiya */
-            margin-bottom: 5px !important;
+            font-size: 36px !important;
+            margin-bottom: 8px !important;
         }
         .login-inp {
-            padding: 10px 12px !important; /* Input height kam ki */
-            font-size: 14px !important;
+            padding: 12px 14px !important;
+            font-size: 15px !important;
         }
-        /* Buttons aur gaps ko compact kiya */
-        .login-btn { padding: 12px !important; font-size: 14px !important; }
-        .login-guest { padding: 10px !important; font-size: 13px !important; }
+        .login-btn { padding: 14px !important; font-size: 15px !important; }
         
-        /* Spacing adjustments */
-        div[style*="margin-bottom: 2.5rem"] { margin-bottom: 1.2rem !important; }
-        div[style*="margin-bottom: 1.4rem"] { margin-bottom: 1rem !important; }
-        div[style*="margin-bottom: 2rem"] { margin-bottom: 1.5rem !important; }
-        div[style*="margin: 1.75rem 0"] { margin: 1rem 0 !important; }
+        /* Spacing for mobile */
+        div[style*="margin-bottom: 2.5rem"] { margin-bottom: 1.5rem !important; }
     }
 `}</style>
 

@@ -70,67 +70,47 @@ export default function Register() {
 
     /* FINAL CLEAN MOBILE FIX */
     @media (max-width: 768px) {
-        /* Puraani grid ko khatam karke simple layout */
         .reg-main-grid {
-            display: block !important; 
-            padding-top: 40px !important;
+            display: flex !important; 
+            flex-direction: column !important;
+            padding-top: 0 !important;
             background: #0B1A3E !important;
             min-height: 100vh;
         }
         
-        /* Left panel (blue intro) ko sakhti se hide kiya taake overlap na ho */
         .reg-left-panel {
             display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            height: 0 !important;
-            width: 0 !important;
-            position: absolute !important;
         }
 
         .reg-right-panel {
-            padding: 1.5rem !important;
+            padding: 2rem 1.5rem !important;
             background: transparent !important;
             display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
+            justify-content: center !important; /* Vertically Centers Form */
+            flex: 1; 
         }
 
         .reg-form-container {
             width: 100% !important;
-            max-width: 320px !important;
+            max-width: 360px !important;
             margin: 0 auto !important;
         }
 
-        /* Logo aur Header ko saaf kiya */
-        .logo-box, div[style*="font-family: 'Cormorant Garamond'"] {
-            text-align: center !important;
-            margin-bottom: 15px !important;
-        }
-
         h1 {
-            font-size: 28px !important;
-            text-align: center !important;
+            font-size: 34px !important;
             margin: 10px 0 !important;
         }
 
-        /* Step text fix */
-        div[style*="letter-spacing: 0.16em"] {
-            text-align: center !important;
-            width: 100% !important;
-            margin-bottom: 5px !important;
-            font-size: 11px !important;
-        }
-
-        /* Inputs and spacing */
         .reg-inp {
             padding: 12px !important;
-            font-size: 14px !important;
+            font-size: 15px !important;
         }
-
-        div[style*="margin-bottom: 1.4rem"], 
-        div[style*="margin-bottom: 2rem"] {
-            margin-bottom: 0.8rem !important;
+        
+        /* Mood grid optimization for mobile */
+        .mood-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 8px !important;
         }
     }
 `}</style>
