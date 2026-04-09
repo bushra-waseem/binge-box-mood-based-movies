@@ -39,7 +39,24 @@ export default function MovieDetail() {
     const [activeTab, setActiveTab] = useState("about");
     const [newReview, setNewReview] = useState({ rating: 0, comment: "" });
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    // 1. State define karein (Review text ke liye)
+    const [newComment, setNewComment] = useState("");
 
+    // 2. Review add karne ka function define karein
+    const handleAddReview = () => {
+        if (!newComment.trim()) return alert("PLEASE WRITE SOMETHING FIRST!");
+
+        const reviewObj = {
+            _id: Date.now().toString(),
+            user: { name: "Guest User" },
+            rating: 10,
+            comment: newComment,
+            createdAt: new Date().toISOString().split('T')[0]
+        };
+
+        setReviews([reviewObj, ...reviews]);
+        setNewComment(""); // Input clear karne ke liye
+    };
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
         window.addEventListener('resize', handleResize);
@@ -99,8 +116,35 @@ export default function MovieDetail() {
                     <h1 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: isMobile ? "36px" : "55px", margin: "0 0 10px 0" }}>{content.title}</h1>
                     <p style={{ color: "#7BA3D0", fontSize: "13px", marginBottom: "1.5rem" }}>{content.year} • {content.rating} IMDb</p>
 
-                    <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                        <button style={{ background: neon, color: "#0B1A3E", padding: "12px 25px", borderRadius: "6px", border: "none", fontWeight: "700", display: "flex", alignItems: "center", gap: "8px", boxShadow: `0 0 20px ${neon}44` }}>▶ Watch Now</button>
+                    <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", position: "relative", zIndex: 10 }}>
+
+                        <button
+                            onClick={() => {
+        // Yahan 'trailerUrl' ko badal kar 'trailerLink' kar dein
+        if (content.trailerLink) {
+            window.open(content.trailerLink, "_blank");
+        } else {
+            // Backup search logic (agar link phir bhi na mile)
+            const query = encodeURIComponent(`${content.title} official trailer`);
+            window.open(`https://www.youtube.com/results?search_query=${query}`, "_blank");
+        }
+    }}
+                            style={{
+                                background: neon,
+                                color: "#0B1A3E",
+                                padding: "12px 25px",
+                                borderRadius: "6px",
+                                border: "none",
+                                fontWeight: "700",
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                boxShadow: `0 0 20px ${neon}44`,
+                                cursor: "pointer" // Pointer lazmi hai
+                            }}
+                        >
+                            ▶ Watch Now
+                        </button>
                         <button
                             onClick={() => setInWatchlist(!inWatchlist)}
                             style={{
@@ -132,6 +176,7 @@ export default function MovieDetail() {
                     </div>
                 </div>
             </div>
+
 
             
             {/* TABS & MAIN CONTENT (Wohi logic jo pehle tha) */}
@@ -180,11 +225,20 @@ export default function MovieDetail() {
                                 </div>
                             ))}
                         </div>
-                        {/* Review Form Area */}
-                        <div style={{ background: "rgba(22,40,90,0.5)", padding: "1.5rem", borderRadius: "12px", height: "fit-content" }}>
+                        {/* Review Form */}
+                        <div style={{ background: "rgba(22,40,90,0.5)", padding: "1.5rem", borderRadius: "12px", height: "fit-content", border: `1px solid ${neon}33` }}>
                             <h3 style={{ fontSize: "18px", marginBottom: "1rem" }}>Write a Review</h3>
-                            <textarea placeholder="Your thoughts..." style={{ width: "100%", background: "#0B1A3E", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "6px", padding: "10px", color: "#fff", height: "100px", resize: "none" }} />
-                            <button style={{ width: "100%", background: neon, border: "none", padding: "10px", borderRadius: "6px", marginTop: "10px", fontWeight: "600", color: "#0B1A3E" }}>Submit Review</button>
+                            <textarea
+                                value={newComment}
+                                onChange={(e) => setNewComment(e.target.value)}
+                                placeholder="Your thoughts..."
+                                style={{ width: "100%", background: "#0B1A3E", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "6px", padding: "10px", color: "#fff", height: "100px", resize: "none", outline: "none" }}
+                            />
+                            <button
+                                onClick={handleAddReview}
+                                style={{ width: "100%", background: neon, border: "none", padding: "12px", borderRadius: "6px", marginTop: "10px", fontWeight: "700", color: "#0B1A3E", cursor: "pointer" }}>
+                                Submit Review
+                            </button>
                         </div>
                     </div>
                 )}
